@@ -58,7 +58,7 @@ exports.getAllBooks = (req, res, next) => {
 };
 
 exports.getBestRatedBooks = (req, res, next) => {
-    Book.find().sort({ rating: -1 }).limit(3) // Utilisez le champ "rating" pour trier les livres par ordre décroissant
+    Book.find().sort({ averageRating: -1 }).limit(3)
       .then(books => res.status(200).json(books))
       .catch(error => res.status(500).json({ error }));
   };
