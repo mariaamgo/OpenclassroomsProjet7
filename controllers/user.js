@@ -43,9 +43,3 @@ exports.login = (req, res, next) => {
         })
         .catch(error => res.status(500).json({ error }));
 };
-
-exports.get = (req, res, next) => {
-    User.find()
-        .then(users => res.status(200).json(users))
-        .catch(error => res.status(400).json({ error }));
-};
